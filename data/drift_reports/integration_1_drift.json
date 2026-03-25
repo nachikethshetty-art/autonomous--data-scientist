@@ -1,6 +1,6 @@
 {
   "job_id": "integration_1",
-  "timestamp": "2026-03-25T23:13:34.246781",
+  "timestamp": "2026-03-25T23:19:19.066090",
   "overall_status": "WARNING",
   "data_drift": {
     "overall_drift_detected": true,

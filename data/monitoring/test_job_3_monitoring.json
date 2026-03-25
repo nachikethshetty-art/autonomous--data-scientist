@@ -1,6 +1,6 @@
 {
   "job_id": "test_job_3",
-  "timestamp": "2026-03-25T23:13:33.313821",
+  "timestamp": "2026-03-25T23:19:18.130086",
   "total_predictions": 200,
   "accuracy": 0.515,
   "precision": 0.52,
@@ -30,8 +30,8 @@
   "monitoring_results": {
     "total_predictions": 200,
     "timestamp_range": {
-      "start": "2026-03-25T23:10:14.188509",
-      "end": "2026-03-25T23:13:33.188383"
+      "start": "2026-03-25T23:15:58.994957",
+      "end": "2026-03-25T23:19:17.994837"
     },
     "accuracy": 0.515,
     "per_class_metrics": {
@@ -60,57 +60,57 @@
       "windows": [
         {
           "window_index": 0,
-          "start_time": "2026-03-25T23:13:33.188383",
-          "end_time": "2026-03-25T23:12:44.188418",
+          "start_time": "2026-03-25T23:19:17.994837",
+          "end_time": "2026-03-25T23:18:28.994870",
           "sample_count": 50,
           "accuracy": 0.54
         },
         {
           "window_index": 1,
-          "start_time": "2026-03-25T23:13:08.188403",
-          "end_time": "2026-03-25T23:12:19.188433",
+          "start_time": "2026-03-25T23:18:52.994856",
+          "end_time": "2026-03-25T23:18:03.994884",
           "sample_count": 50,
           "accuracy": 0.46
         },
         {
           "window_index": 2,
-          "start_time": "2026-03-25T23:12:43.188419",
-          "end_time": "2026-03-25T23:11:54.188449",
+          "start_time": "2026-03-25T23:18:27.994871",
+          "end_time": "2026-03-25T23:17:38.994899",
           "sample_count": 50,
           "accuracy": 0.48
         },
         {
           "window_index": 3,
-          "start_time": "2026-03-25T23:12:18.188434",
-          "end_time": "2026-03-25T23:11:29.188464",
+          "start_time": "2026-03-25T23:18:02.994885",
+          "end_time": "2026-03-25T23:17:13.994914",
           "sample_count": 50,
           "accuracy": 0.54
         },
         {
           "window_index": 4,
-          "start_time": "2026-03-25T23:11:53.188449",
-          "end_time": "2026-03-25T23:11:04.188479",
+          "start_time": "2026-03-25T23:17:37.994900",
+          "end_time": "2026-03-25T23:16:48.994929",
           "sample_count": 50,
           "accuracy": 0.52
         },
         {
           "window_index": 5,
-          "start_time": "2026-03-25T23:11:28.188464",
-          "end_time": "2026-03-25T23:10:39.188494",
+          "start_time": "2026-03-25T23:17:12.994915",
+          "end_time": "2026-03-25T23:16:23.994943",
           "sample_count": 50,
           "accuracy": 0.44
         },
         {
           "window_index": 6,
-          "start_time": "2026-03-25T23:11:03.188480",
-          "end_time": "2026-03-25T23:10:14.188509",
+          "start_time": "2026-03-25T23:16:47.994930",
+          "end_time": "2026-03-25T23:15:58.994957",
           "sample_count": 50,
           "accuracy": 0.52
         },
         {
           "window_index": 7,
-          "start_time": "2026-03-25T23:10:38.188495",
-          "end_time": "2026-03-25T23:10:14.188509",
+          "start_time": "2026-03-25T23:16:22.994944",
+          "end_time": "2026-03-25T23:15:58.994957",
           "sample_count": 25,
           "accuracy": 0.6
         }
