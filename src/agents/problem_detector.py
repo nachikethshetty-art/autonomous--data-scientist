@@ -265,7 +265,10 @@ Format: TARGET: column_name | REASON: ... | CONFIDENCE: X/10
         # vs continuous (floats or many unique values)
         
         # Check if all values are integers
-        all_integers = all(val == int(val) for val in target if pd.notna(val))
+        try:
+            all_integers = all(float(val) == int(float(val)) for val in target)
+        except (ValueError, TypeError):
+            all_integers = False
         
         if all_integers and unique_count <= 5:
             # Very few discrete numeric values = likely classification (e.g., 0,1,2,3 for classes)
@@ -277,9 +280,6 @@ Format: TARGET: column_name | REASON: ... | CONFIDENCE: X/10
 
         # Otherwise, continuous numeric target = regression
         return "regression", f"Continuous numeric target with {unique_count} unique values"
-
-        # Otherwise regression
-        return "regression", f"Continuous numeric target ({unique_count} unique values)"
 
 
 # Build LangGraph workflow

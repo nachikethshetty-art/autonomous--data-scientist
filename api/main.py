@@ -6,12 +6,29 @@ Module 19: API Routes
 from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.encoders import jsonable_encoder
 from contextlib import asynccontextmanager
 import os
 from dotenv import load_dotenv
+import json
+import numpy as np
 
 # Import modules
 from src.ingestion.validator import DataValidator
+
+
+class NumpyEncoder(json.JSONEncoder):
+    """Custom JSON encoder for numpy types."""
+    def default(self, obj):
+        if isinstance(obj, np.bool_):
+            return bool(obj)
+        if isinstance(obj, np.integer):
+            return int(obj)
+        if isinstance(obj, np.floating):
+            return float(obj)
+        if isinstance(obj, np.ndarray):
+            return obj.tolist()
+        return super().default(obj)
 
 # Load environment
 load_dotenv()
@@ -101,8 +118,12 @@ async def upload_csv(file: UploadFile = File(...)):
         if not result.get("success"):
             raise HTTPException(status_code=400, detail=result.get("error"))
 
-        return JSONResponse(status_code=200, content=result)
+        # Use FastAPI's jsonable_encoder to handle any remaining numpy types
+        encoded_result = jsonable_encoder(result)
+        return encoded_result
 
+    except HTTPException:
+        raise
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Upload failed: {str(e)}")
 
