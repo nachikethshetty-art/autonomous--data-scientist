@@ -1,0 +1,101 @@
+{
+  "job_id": "integration_test",
+  "timestamp": "2026-03-25T23:12:52.280473",
+  "dataset_shape": {
+    "rows": 8,
+    "columns": 3
+  },
+  "basic_statistics": {
+    "shape": [
+      8,
+      3
+    ],
+    "memory_usage_mb": 0.000308990478515625,
+    "total_cells": 24,
+    "total_missing": 0,
+    "duplicates": 0
+  },
+  "column_analysis": {
+    "age": {
+      "type": "int64",
+      "non_null_count": 8,
+      "null_count": 0,
+      "unique_values": 8,
+      "min": -1.4288690166235205,
+      "max": 1.4288690166235205,
+      "mean": 0.0
+    },
+    "income": {
+      "type": "float64",
+      "non_null_count": 8,
+      "null_count": 0,
+      "unique_values": 8,
+      "min": -1.4288690166235205,
+      "max": 1.4288690166235205,
+      "mean": 0.0
+    },
+    "purchased": {
+      "type": "int64",
+      "non_null_count": 8,
+      "null_count": 0,
+      "unique_values": 2,
+      "min": -1.20761472884912,
+      "max": 0.724568837309472,
+      "mean": 1.3877787807814457e-17
+    }
+  },
+  "correlation_analysis": {
+    "strong_correlations": [
+      {
+        "var1": "age",
+        "var2": "income",
+        "correlation": 1.0
+      }
+    ]
+  },
+  "missing_value_analysis": {
+    "columns_with_missing": {},
+    "total_missing_pct": 0.0
+  },
+  "categorical_analysis": {},
+  "numeric_distribution": {
+    "age": {
+      "skewness": 0.0,
+      "kurtosis": -1.200000000000001,
+      "distribution": "normal"
+    },
+    "income": {
+      "skewness": 0.0,
+      "kurtosis": -1.200000000000001,
+      "distribution": "normal"
+    },
+    "purchased": {
+      "skewness": -0.6440611887195307,
+      "kurtosis": -2.2399999999999998,
+      "distribution": "normal"
+    }
+  },
+  "outlier_analysis": {
+    "age": {
+      "outlier_count": 0,
+      "outlier_pct": 0.0,
+      "lower_bound": -2.8577380332470415,
+      "upper_bound": 2.8577380332470415
+    },
+    "income": {
+      "outlier_count": 0,
+      "outlier_pct": 0.0,
+      "lower_bound": -2.8577380332470415,
+      "upper_bound": 2.8577380332470415
+    },
+    "purchased": {
+      "outlier_count": 0,
+      "outlier_pct": 0.0,
+      "lower_bound": -4.105890078087008,
+      "upper_bound": 3.6228441865473595
+    }
+  },
+  "insights": [
+    "\u2139\ufe0f High multicollinearity detected in: age"
+  ]
+}

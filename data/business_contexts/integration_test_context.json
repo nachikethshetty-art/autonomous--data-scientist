@@ -1,0 +1,12 @@
+{
+  "job_id": "integration_test",
+  "context_id": "703661ec-ca81-4ba4-9ffa-d9ce7caae6e5",
+  "created_at": "2026-03-25T23:12:52.278254",
+  "prediction_goal": "Classify customers",
+  "domain": "Retail",
+  "target_audience": "Marketing team",
+  "success_metric": "F1 >= 0.8",
+  "constraints": "None specified",
+  "special_requirements": "None specified",
+  "budget": "Standard (CPU)"
+}

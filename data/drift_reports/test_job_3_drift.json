@@ -1,0 +1,63 @@
+{
+  "job_id": "test_job_3",
+  "timestamp": "2026-03-25T23:13:25.469019",
+  "overall_status": "CRITICAL",
+  "data_drift": {
+    "overall_drift_detected": true,
+    "features_with_drift": [
+      "feature_1"
+    ],
+    "feature_details": {
+      "feature_1": {
+        "type": "numerical",
+        "test": "KS",
+        "statistic": 0.225,
+        "p_value": 0.002150593360233442,
+        "drift_detected": "True",
+        "baseline_mean": -0.040770965172084984,
+        "current_mean": 0.22168233328053308,
+        "baseline_std": 0.9310039152070014,
+        "current_std": 1.2240003982555494
+      },
+      "feature_2": {
+        "type": "numerical",
+        "test": "KS",
+        "statistic": 0.095,
+        "p_value": 0.5746507722263698,
+        "drift_detected": "False",
+        "baseline_mean": 5.171736373797753,
+        "current_mean": 4.988712484120418,
+        "baseline_std": 1.9740076220440852,
+        "current_std": 2.176846182014418
+      },
+      "feature_3": {
+        "type": "categorical",
+        "test": "Chi-square",
+        "statistic": 1.5784353810197995,
+        "p_value": 0.8126626415485282,
+        "drift_detected": "False"
+      }
+    }
+  },
+  "prediction_drift": {
+    "overall_drift_detected": "True",
+    "statistic": 0.5,
+    "p_value": 1.3624890094159443e-15,
+    "baseline_mean": 0.5,
+    "current_mean": 1.0,
+    "baseline_std": 0.5,
+    "current_std": 0.0,
+    "class_imbalance_change": {
+      "baseline_distribution": {
+        "0": 0.5,
+        "1": 0.5
+      },
+      "current_distribution": {
+        "1": 1.0
+      }
+    }
+  },
+  "performance_drift": {},
+  "alert_level": "CRITICAL",
+  "recommendation": "CRITICAL: Retraining recommended. Drifted features: feature_1"
+}

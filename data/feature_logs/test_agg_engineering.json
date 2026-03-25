@@ -1,0 +1,72 @@
+{
+  "job_id": "test_agg",
+  "problem_type": "classification",
+  "total_original_features": 5,
+  "total_engineered_features": 81,
+  "engineered_feature_count": 81,
+  "feature_importance": {},
+  "selected_features": [
+    "feature_1",
+    "feature_2",
+    "feature_3",
+    "feature_4",
+    "feature_5"
+  ],
+  "transformations": {
+    "polynomial_features": {
+      "count": 65,
+      "max_degree": 3,
+      "features": [
+        "poly_2_feature_1^2",
+        "poly_2_feature_1 feature_2",
+        "poly_2_feature_1 feature_3",
+        "poly_2_feature_1 feature_4",
+        "poly_2_feature_1 feature_5",
+        "poly_2_feature_2^2",
+        "poly_2_feature_2 feature_3",
+        "poly_2_feature_2 feature_4",
+        "poly_2_feature_2 feature_5",
+        "poly_2_feature_3^2"
+      ]
+    },
+    "interaction_features": {
+      "count": 10,
+      "max_interactions": 15,
+      "features": [
+        "interact_feature_1_feature_2",
+        "interact_feature_1_feature_3",
+        "interact_feature_1_feature_4",
+        "interact_feature_1_feature_5",
+        "interact_feature_2_feature_3",
+        "interact_feature_2_feature_4",
+        "interact_feature_2_feature_5",
+        "interact_feature_3_feature_4",
+        "interact_feature_3_feature_5",
+        "interact_feature_4_feature_5"
+      ]
+    },
+    "domain_features": {
+      "count": 6,
+      "features": [
+        "ratio_feature_1_feature_2",
+        "ratio_feature_1_feature_3",
+        "ratio_feature_2_feature_3",
+        "ratio_feature_2_feature_4",
+        "ratio_feature_3_feature_4",
+        "ratio_feature_3_feature_5"
+      ]
+    },
+    "feature_selection": {
+      "strategy": "aggressive",
+      "total_features": 86,
+      "selected_count": 5,
+      "selected_features": [
+        "feature_1",
+        "feature_2",
+        "feature_3",
+        "feature_4",
+        "feature_5"
+      ]
+    }
+  }
+}

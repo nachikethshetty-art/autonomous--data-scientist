@@ -1,0 +1,57 @@
+{
+  "metrics": {
+    "r2": 0.9590694901850185,
+    "mse": 0.5119625832562151,
+    "rmse": 0.7155156065776729,
+    "mae": 0.4744006388766847,
+    "mape": 0.47917308009555504,
+    "residuals": {
+      "mean": 0.0044444896745412495,
+      "std": 0.715501802770439,
+      "min": -2.073418964426776,
+      "max": 2.557329918048223
+    }
+  },
+  "feature_importance": {
+    "feature_2": 1.0815903920227934,
+    "feature_1": 0.3440899032876484,
+    "feature_3": 0.0056586902659208176,
+    "feature_5": 0.005059500607178951,
+    "feature_4": 0.004730446232525146
+  },
+  "plots_generated": [
+    "residuals_plot.png",
+    "predictions_vs_actual.png",
+    "feature_importance.png"
+  ],
+  "report": {
+    "job_id": "test_reg_eval_001",
+    "problem_type": "regression",
+    "test_set_size": 40,
+    "metrics": {
+      "r2": 0.9590694901850185,
+      "mse": 0.5119625832562151,
+      "rmse": 0.7155156065776729,
+      "mae": 0.4744006388766847,
+      "mape": 0.47917308009555504,
+      "residuals": {
+        "mean": 0.0044444896745412495,
+        "std": 0.715501802770439,
+        "min": -2.073418964426776,
+        "max": 2.557329918048223
+      }
+    },
+    "feature_importance": {
+      "feature_2": 1.0815903920227934,
+      "feature_1": 0.3440899032876484,
+      "feature_3": 0.0056586902659208176,
+      "feature_5": 0.005059500607178951,
+      "feature_4": 0.004730446232525146
+    },
+    "interpretation": {
+      "r2_interpretation": "Model explains 95.9% of variance in target",
+      "rmse_interpretation": "Average prediction error is \u00b10.72",
+      "mae_interpretation": "Mean absolute error is 0.47"
+    }
+  }
+}

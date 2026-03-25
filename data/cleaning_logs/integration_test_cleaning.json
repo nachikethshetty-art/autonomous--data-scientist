@@ -1,0 +1,36 @@
+{
+  "job_id": "integration_test",
+  "timestamp": "2026-03-25T23:12:52.280342",
+  "steps": [
+    {
+      "step": 4,
+      "column": "income",
+      "action": "convert_type",
+      "to_type": "float64"
+    },
+    {
+      "step": 6,
+      "column": "age",
+      "action": "standardize",
+      "method": "StandardScaler",
+      "mean": 42.5,
+      "std": 12.24744871391589
+    },
+    {
+      "step": 6,
+      "column": "income",
+      "action": "standardize",
+      "method": "StandardScaler",
+      "mean": 65000.0,
+      "std": 24494.89742783178
+    },
+    {
+      "step": 6,
+      "column": "purchased",
+      "action": "standardize",
+      "method": "StandardScaler",
+      "mean": 0.625,
+      "std": 0.5175491695067657
+    }
+  ]
+}

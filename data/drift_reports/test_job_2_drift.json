@@ -1,0 +1,46 @@
+{
+  "job_id": "test_job_2",
+  "timestamp": "2026-03-25T23:13:25.405561",
+  "overall_status": "WARNING",
+  "data_drift": {
+    "overall_drift_detected": true,
+    "features_with_drift": [
+      "feature_1"
+    ],
+    "feature_details": {
+      "feature_1": {
+        "type": "numerical",
+        "test": "KS",
+        "statistic": 0.755,
+        "p_value": 9.520558872945034e-38,
+        "drift_detected": "True",
+        "baseline_mean": -0.040770965172084984,
+        "current_mean": 2.142885263691984,
+        "baseline_std": 0.9310039152070014,
+        "current_std": 1.0928631778968882
+      },
+      "feature_2": {
+        "type": "numerical",
+        "test": "KS",
+        "statistic": 0.07,
+        "p_value": 0.8933338427537486,
+        "drift_detected": "False",
+        "baseline_mean": 5.171736373797753,
+        "current_mean": 5.179587460736501,
+        "baseline_std": 1.9740076220440852,
+        "current_std": 2.123877386862206
+      },
+      "feature_3": {
+        "type": "categorical",
+        "test": "Chi-square",
+        "statistic": 3.585102173811851,
+        "p_value": 0.4650568881427234,
+        "drift_detected": "False"
+      }
+    }
+  },
+  "prediction_drift": {},
+  "performance_drift": {},
+  "alert_level": "WARNING",
+  "recommendation": "WARNING: Monitor closely. Consider retraining if drift persists."
+}

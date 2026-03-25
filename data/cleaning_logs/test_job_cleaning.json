@@ -1,0 +1,76 @@
+{
+  "job_id": "test_job",
+  "timestamp": "2026-03-25T23:12:50.417526",
+  "steps": [
+    {
+      "step": 2,
+      "column": "age",
+      "action": "fill_numeric",
+      "method": "median",
+      "fill_value": 31.0,
+      "count": 1
+    },
+    {
+      "step": 2,
+      "column": "salary",
+      "action": "fill_numeric",
+      "method": "median",
+      "fill_value": 57500.0,
+      "count": 1
+    },
+    {
+      "step": 3,
+      "column": "age",
+      "action": "clip_outliers",
+      "method": "IQR",
+      "count_clipped": 1,
+      "lower_bound": 14.75,
+      "upper_bound": 52.75
+    },
+    {
+      "step": 4,
+      "column": "age",
+      "action": "convert_type",
+      "to_type": "int64"
+    },
+    {
+      "step": 5,
+      "column": "name",
+      "action": "onehot_encode",
+      "unique_values": 7,
+      "new_columns": [
+        "name_Alice",
+        "name_Bob",
+        "name_Charlie",
+        "name_David",
+        "name_Eve",
+        "name_Frank",
+        "name_Grace"
+      ]
+    },
+    {
+      "step": 6,
+      "column": "age",
+      "action": "standardize",
+      "method": "StandardScaler",
+      "mean": 34.714285714285715,
+      "std": 9.894683517160209
+    },
+    {
+      "step": 6,
+      "column": "salary",
+      "action": "standardize",
+      "method": "StandardScaler",
+      "mean": 58500.0,
+      "std": 7123.903424387504
+    },
+    {
+      "step": 6,
+      "column": "score",
+      "action": "standardize",
+      "method": "StandardScaler",
+      "mean": 0.5714285714285714,
+      "std": 0.5345224838248488
+    }
+  ]
+}

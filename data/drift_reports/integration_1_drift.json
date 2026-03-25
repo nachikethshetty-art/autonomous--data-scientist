@@ -1,0 +1,50 @@
+{
+  "job_id": "integration_1",
+  "timestamp": "2026-03-25T23:13:34.246781",
+  "overall_status": "WARNING",
+  "data_drift": {
+    "overall_drift_detected": true,
+    "features_with_drift": [
+      "feature_1"
+    ],
+    "feature_details": {
+      "feature_1": {
+        "type": "numerical",
+        "test": "KS",
+        "statistic": 0.79,
+        "p_value": 3.0548822409334434e-31,
+        "drift_detected": "True",
+        "baseline_mean": -0.10384651739409384,
+        "current_mean": 2.0571673739919047,
+        "baseline_std": 0.9081684280078007,
+        "current_std": 0.940487514929106
+      },
+      "feature_2": {
+        "type": "numerical",
+        "test": "KS",
+        "statistic": 0.11,
+        "p_value": 0.5830090612540064,
+        "drift_detected": "False",
+        "baseline_mean": 0.022304587049923885,
+        "current_mean": 0.07287052316561692,
+        "baseline_std": 0.9536689661831037,
+        "current_std": 1.0114041360517476
+      },
+      "target": {
+        "type": "numerical",
+        "test": "KS",
+        "statistic": 0.11,
+        "p_value": 0.5830090612540064,
+        "drift_detected": "False",
+        "baseline_mean": 0.57,
+        "current_mean": 0.46,
+        "baseline_std": 0.497569851956243,
+        "current_std": 0.5009082659620331
+      }
+    }
+  },
+  "prediction_drift": {},
+  "performance_drift": {},
+  "alert_level": "WARNING",
+  "recommendation": "WARNING: Monitor closely. Consider retraining if drift persists."
+}

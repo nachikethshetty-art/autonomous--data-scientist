@@ -7,7 +7,7 @@ Detects target column and problem type (classification/regression)
 from typing import Dict, Any, Optional, List
 from dataclasses import dataclass
 import pandas as pd
-from langgraph.graph import Graph, END
+from langgraph.graph import StateGraph, END
 from src.llm.provider import get_llm_provider
 
 
@@ -261,13 +261,22 @@ Format: TARGET: column_name | REASON: ... | CONFIDENCE: X/10
             # Categorical target = classification
             return "classification", f"Categorical target with {unique_count} classes"
 
-        if unique_count <= 10:
-            # Few unique numeric values = likely classification
-            return "classification", f"Numeric target with {unique_count} values (discrete)"
-
-        if unique_ratio < 0.05:
-            # <5% unique = likely classification
+        # For numeric targets, check if values look discrete (integer-like and limited range)
+        # vs continuous (floats or many unique values)
+        
+        # Check if all values are integers
+        all_integers = all(val == int(val) for val in target if pd.notna(val))
+        
+        if all_integers and unique_count <= 5:
+            # Very few discrete numeric values = likely classification (e.g., 0,1,2,3 for classes)
+            return "classification", f"Numeric target with {unique_count} discrete values"
+        
+        if unique_ratio < 0.05 and unique_count <= 3:
+            # <5% unique with <= 3 classes = likely classification
             return "classification", f"Low cardinality ratio {unique_ratio:.2%}"
+
+        # Otherwise, continuous numeric target = regression
+        return "regression", f"Continuous numeric target with {unique_count} unique values"
 
         # Otherwise regression
         return "regression", f"Continuous numeric target ({unique_count} unique values)"
@@ -290,7 +299,7 @@ def build_problem_detection_graph():
         return "confirmed"
 
     # Build graph
-    graph = Graph()
+    graph = StateGraph(ProblemDetectionState)
     graph.add_node("detect", detect_node)
     graph.add_node("route", requires_review_node)
     graph.add_node("confirmed", lambda x: x)
@@ -304,7 +313,7 @@ def build_problem_detection_graph():
 
     graph.set_entry_point("detect")
 
-    return graph
+    return graph.compile()
 
 
 # Export

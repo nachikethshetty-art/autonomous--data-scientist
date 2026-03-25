@@ -1,0 +1,63 @@
+{
+  "job_id": "test_job_001",
+  "problem_type": "classification",
+  "total_original_features": 5,
+  "total_engineered_features": 23,
+  "engineered_feature_count": 23,
+  "feature_importance": {},
+  "selected_features": [
+    "feature_1",
+    "feature_2",
+    "feature_3",
+    "feature_4",
+    "feature_5"
+  ],
+  "transformations": {
+    "polynomial_features": {
+      "count": 15,
+      "max_degree": 2,
+      "features": [
+        "poly_2_feature_1^2",
+        "poly_2_feature_1 feature_2",
+        "poly_2_feature_1 feature_3",
+        "poly_2_feature_1 feature_4",
+        "poly_2_feature_1 feature_5",
+        "poly_2_feature_2^2",
+        "poly_2_feature_2 feature_3",
+        "poly_2_feature_2 feature_4",
+        "poly_2_feature_2 feature_5",
+        "poly_2_feature_3^2"
+      ]
+    },
+    "interaction_features": {
+      "count": 8,
+      "max_interactions": 8,
+      "features": [
+        "interact_feature_1_feature_2",
+        "interact_feature_1_feature_3",
+        "interact_feature_1_feature_4",
+        "interact_feature_1_feature_5",
+        "interact_feature_2_feature_3",
+        "interact_feature_2_feature_4",
+        "interact_feature_2_feature_5",
+        "interact_feature_3_feature_4"
+      ]
+    },
+    "domain_features": {
+      "count": 0,
+      "features": []
+    },
+    "feature_selection": {
+      "strategy": "smart",
+      "total_features": 28,
+      "selected_count": 5,
+      "selected_features": [
+        "feature_1",
+        "feature_2",
+        "feature_3",
+        "feature_4",
+        "feature_5"
+      ]
+    }
+  }
+}

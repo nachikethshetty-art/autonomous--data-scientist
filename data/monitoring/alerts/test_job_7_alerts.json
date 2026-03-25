@@ -1,0 +1,35 @@
+[
+  {
+    "type": "LOW_ACCURACY",
+    "severity": "CRITICAL",
+    "message": "Accuracy dropped to 0.00%",
+    "threshold": 0.7,
+    "current_value": 0.0
+  },
+  {
+    "type": "ANOMALY_DETECTED",
+    "severity": "MEDIUM",
+    "message": "low_confidence_predictions: {'type': 'low_confidence_predictions', 'percentage': 100.0, 'severity': 'medium'}",
+    "anomaly_details": {
+      "type": "low_confidence_predictions",
+      "percentage": 100.0,
+      "severity": "medium"
+    }
+  },
+  {
+    "type": "ANOMALY_DETECTED",
+    "severity": "MEDIUM",
+    "message": "high_prediction_latency: {'type': 'high_prediction_latency', 'percentage': 100.0, 'severity': 'medium'}",
+    "anomaly_details": {
+      "type": "high_prediction_latency",
+      "percentage": 100.0,
+      "severity": "medium"
+    }
+  },
+  {
+    "type": "CLASS_IMBALANCE_SHIFT",
+    "severity": "WARNING",
+    "message": "Significant shift in class distribution (diff: 200.00%)",
+    "distribution_diff": 2.0
+  }
+]

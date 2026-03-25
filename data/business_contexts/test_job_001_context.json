@@ -1,0 +1,12 @@
+{
+  "job_id": "test_job_001",
+  "context_id": "f46dc3a2-0ed6-4e9a-ac2c-f5312bdb3ab5",
+  "created_at": "2026-03-25T23:12:50.401121",
+  "prediction_goal": "Predict customer churn",
+  "domain": "Telecommunications",
+  "target_audience": "Customer retention team",
+  "success_metric": "Precision >= 0.85",
+  "constraints": "Real-time processing",
+  "special_requirements": "Handle imbalanced data",
+  "budget": "Standard (CPU)"
+}

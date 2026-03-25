@@ -1,0 +1,133 @@
+{
+  "job_id": "test_job",
+  "timestamp": "2026-03-25T23:12:52.274310",
+  "dataset_shape": {
+    "rows": 100,
+    "columns": 5
+  },
+  "basic_statistics": {
+    "shape": [
+      100,
+      5
+    ],
+    "memory_usage_mb": 0.007946014404296875,
+    "total_cells": 500,
+    "total_missing": 0,
+    "duplicates": 0
+  },
+  "column_analysis": {
+    "age": {
+      "type": "float64",
+      "non_null_count": 100,
+      "null_count": 0,
+      "unique_values": 100,
+      "min": -4.296176561346165,
+      "max": 62.78417276763407,
+      "mean": 33.4423022390886
+    },
+    "income": {
+      "type": "float64",
+      "non_null_count": 100,
+      "null_count": 0,
+      "unique_values": 100,
+      "min": 11624.57569401917,
+      "max": 104403.38333179237,
+      "mean": 50446.091740998476
+    },
+    "score": {
+      "type": "float64",
+      "non_null_count": 100,
+      "null_count": 0,
+      "unique_values": 100,
+      "min": 1.4393488629755868,
+      "max": 97.58520794625346,
+      "mean": 48.7326109491043
+    },
+    "category": {
+      "type": "object",
+      "non_null_count": 100,
+      "null_count": 0,
+      "unique_values": 3,
+      "min": null,
+      "max": null,
+      "mean": null
+    },
+    "binary": {
+      "type": "int64",
+      "non_null_count": 100,
+      "null_count": 0,
+      "unique_values": 2,
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.47
+    }
+  },
+  "correlation_analysis": {
+    "strong_correlations": []
+  },
+  "missing_value_analysis": {
+    "columns_with_missing": {},
+    "total_missing_pct": 0.0
+  },
+  "categorical_analysis": {
+    "category": {
+      "unique_values": 3,
+      "top_5": {
+        "A": 43,
+        "C": 33,
+        "B": 24
+      }
+    }
+  },
+  "numeric_distribution": {
+    "age": {
+      "skewness": -0.17794814262595332,
+      "kurtosis": -0.10097745347286802,
+      "distribution": "normal"
+    },
+    "income": {
+      "skewness": 0.3869837647365,
+      "kurtosis": 0.030979026861081227,
+      "distribution": "normal"
+    },
+    "score": {
+      "skewness": -0.18776338736790435,
+      "kurtosis": -1.023120186436158,
+      "distribution": "normal"
+    },
+    "binary": {
+      "skewness": 0.1220550936349127,
+      "kurtosis": -2.0260355753255364,
+      "distribution": "normal"
+    }
+  },
+  "outlier_analysis": {
+    "age": {
+      "outlier_count": 1,
+      "outlier_pct": 1.0,
+      "lower_bound": 3.332116186111623,
+      "upper_bound": 63.74357953662251
+    },
+    "income": {
+      "outlier_count": 1,
+      "outlier_pct": 1.0,
+      "lower_bound": -6428.13958776091,
+      "upper_bound": 101078.33807786426
+    },
+    "score": {
+      "outlier_count": 0,
+      "outlier_pct": 0.0,
+      "lower_bound": -35.89980545976428,
+      "upper_bound": 133.87527190626733
+    },
+    "binary": {
+      "outlier_count": 0,
+      "outlier_pct": 0.0,
+      "lower_bound": -1.5,
+      "upper_bound": 2.5
+    }
+  },
+  "insights": [
+    "\u2705 Dataset looks clean and well-structured"
+  ]
+}

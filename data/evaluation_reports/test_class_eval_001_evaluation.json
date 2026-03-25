@@ -1,0 +1,127 @@
+{
+  "metrics": {
+    "accuracy": 0.9,
+    "precision": 0.9,
+    "recall": 0.9,
+    "f1": 0.9,
+    "roc_auc": 0.9616368286445013,
+    "confusion_matrix": [
+      [
+        15,
+        2
+      ],
+      [
+        2,
+        21
+      ]
+    ],
+    "confusion_matrix_labels": [
+      "0",
+      "1"
+    ],
+    "per_class_metrics": {
+      "0": {
+        "precision": 0.8823529411764706,
+        "recall": 0.8823529411764706,
+        "f1-score": 0.8823529411764706,
+        "support": 17.0
+      },
+      "1": {
+        "precision": 0.9130434782608695,
+        "recall": 0.9130434782608695,
+        "f1-score": 0.9130434782608695,
+        "support": 23.0
+      },
+      "accuracy": 0.9,
+      "macro avg": {
+        "precision": 0.8976982097186701,
+        "recall": 0.8976982097186701,
+        "f1-score": 0.8976982097186701,
+        "support": 40.0
+      },
+      "weighted avg": {
+        "precision": 0.9,
+        "recall": 0.9,
+        "f1-score": 0.9,
+        "support": 40.0
+      }
+    }
+  },
+  "feature_importance": {
+    "feature_2": 0.3722897980605755,
+    "feature_1": 0.23860352180535888,
+    "feature_3": 0.05790661177520497,
+    "feature_4": 0.04018154418546192,
+    "feature_5": 0.0372685241733988
+  },
+  "plots_generated": [
+    "confusion_matrix.png",
+    "roc_curve.png",
+    "feature_importance.png"
+  ],
+  "report": {
+    "job_id": "test_class_eval_001",
+    "problem_type": "classification",
+    "test_set_size": 40,
+    "metrics": {
+      "accuracy": 0.9,
+      "precision": 0.9,
+      "recall": 0.9,
+      "f1": 0.9,
+      "roc_auc": 0.9616368286445013,
+      "confusion_matrix": [
+        [
+          15,
+          2
+        ],
+        [
+          2,
+          21
+        ]
+      ],
+      "confusion_matrix_labels": [
+        "0",
+        "1"
+      ],
+      "per_class_metrics": {
+        "0": {
+          "precision": 0.8823529411764706,
+          "recall": 0.8823529411764706,
+          "f1-score": 0.8823529411764706,
+          "support": 17.0
+        },
+        "1": {
+          "precision": 0.9130434782608695,
+          "recall": 0.9130434782608695,
+          "f1-score": 0.9130434782608695,
+          "support": 23.0
+        },
+        "accuracy": 0.9,
+        "macro avg": {
+          "precision": 0.8976982097186701,
+          "recall": 0.8976982097186701,
+          "f1-score": 0.8976982097186701,
+          "support": 40.0
+        },
+        "weighted avg": {
+          "precision": 0.9,
+          "recall": 0.9,
+          "f1-score": 0.9,
+          "support": 40.0
+        }
+      }
+    },
+    "feature_importance": {
+      "feature_2": 0.3722897980605755,
+      "feature_1": 0.23860352180535888,
+      "feature_3": 0.05790661177520497,
+      "feature_4": 0.04018154418546192,
+      "feature_5": 0.0372685241733988
+    },
+    "interpretation": {
+      "accuracy_interpretation": "Model correctly predicts 90.0% of test cases",
+      "precision_interpretation": "When model predicts positive, it's correct 90.0% of the time",
+      "recall_interpretation": "Model finds 90.0% of actual positive cases"
+    }
+  }
+}

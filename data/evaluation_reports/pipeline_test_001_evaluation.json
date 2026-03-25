@@ -1,0 +1,165 @@
+{
+  "metrics": {
+    "accuracy": 0.8,
+    "precision": 0.8,
+    "recall": 0.8,
+    "f1": 0.8,
+    "roc_auc": 0.907928388746803,
+    "confusion_matrix": [
+      [
+        13,
+        4
+      ],
+      [
+        4,
+        19
+      ]
+    ],
+    "confusion_matrix_labels": [
+      "0",
+      "1"
+    ],
+    "per_class_metrics": {
+      "0": {
+        "precision": 0.7647058823529411,
+        "recall": 0.7647058823529411,
+        "f1-score": 0.7647058823529411,
+        "support": 17.0
+      },
+      "1": {
+        "precision": 0.8260869565217391,
+        "recall": 0.8260869565217391,
+        "f1-score": 0.8260869565217391,
+        "support": 23.0
+      },
+      "accuracy": 0.8,
+      "macro avg": {
+        "precision": 0.7953964194373402,
+        "recall": 0.7953964194373402,
+        "f1-score": 0.7953964194373402,
+        "support": 40.0
+      },
+      "weighted avg": {
+        "precision": 0.8,
+        "recall": 0.8,
+        "f1-score": 0.8,
+        "support": 40.0
+      }
+    }
+  },
+  "feature_importance": {
+    "feature_2": 0.19610531832496217,
+    "feature_1": 0.1462378578370346,
+    "interact_feature_1_feature_2": 0.027700649384507562,
+    "poly_2_feature_1 feature_2": 0.01791167167799073,
+    "poly_2_feature_2 feature_3": 0.01585620903075129,
+    "interact_feature_1_feature_3": 0.014858802685303195,
+    "feature_3": 0.014314978981216428,
+    "feature_5": 0.012230693374972266,
+    "poly_2_feature_1^2": 0.012086476539707975,
+    "interact_feature_2_feature_3": 0.009683273075219455,
+    "poly_2_feature_5^2": 0.009641365579954991,
+    "poly_2_feature_1 feature_4": 0.008697836486695584,
+    "interact_feature_2_feature_4": 0.008265804536355944,
+    "interact_feature_1_feature_4": 0.008236276607281958,
+    "poly_2_feature_3 feature_4": 0.007834872642346388,
+    "interact_feature_3_feature_4": 0.0077542139193604665,
+    "interact_feature_2_feature_5": 0.007264077767896661,
+    "poly_2_feature_2 feature_5": 0.0071419048991372336,
+    "poly_2_feature_1 feature_5": 0.006805043092332225,
+    "poly_2_feature_2^2": 0.006598593953925432,
+    "poly_2_feature_3 feature_5": 0.006581301021825383,
+    "interact_feature_1_feature_5": 0.006238283451397311,
+    "poly_2_feature_2 feature_4": 0.006086817877929581,
+    "poly_2_feature_4^2": 0.005985128727143331,
+    "poly_2_feature_1 feature_3": 0.0046212033825853245,
+    "feature_4": 0.002651305212858327,
+    "poly_2_feature_3^2": -0.0038292316461335414,
+    "poly_2_feature_4 feature_5": -0.0048107284245578995
+  },
+  "plots_generated": [
+    "confusion_matrix.png",
+    "roc_curve.png",
+    "feature_importance.png"
+  ],
+  "report": {
+    "job_id": "pipeline_test_001",
+    "problem_type": "classification",
+    "test_set_size": 40,
+    "metrics": {
+      "accuracy": 0.8,
+      "precision": 0.8,
+      "recall": 0.8,
+      "f1": 0.8,
+      "roc_auc": 0.907928388746803,
+      "confusion_matrix": [
+        [
+          13,
+          4
+        ],
+        [
+          4,
+          19
+        ]
+      ],
+      "confusion_matrix_labels": [
+        "0",
+        "1"
+      ],
+      "per_class_metrics": {
+        "0": {
+          "precision": 0.7647058823529411,
+          "recall": 0.7647058823529411,
+          "f1-score": 0.7647058823529411,
+          "support": 17.0
+        },
+        "1": {
+          "precision": 0.8260869565217391,
+          "recall": 0.8260869565217391,
+          "f1-score": 0.8260869565217391,
+          "support": 23.0
+        },
+        "accuracy": 0.8,
+        "macro avg": {
+          "precision": 0.7953964194373402,
+          "recall": 0.7953964194373402,
+          "f1-score": 0.7953964194373402,
+          "support": 40.0
+        },
+        "weighted avg": {
+          "precision": 0.8,
+          "recall": 0.8,
+          "f1-score": 0.8,
+          "support": 40.0
+        }
+      }
+    },
+    "feature_importance": {
+      "feature_2": 0.19610531832496217,
+      "feature_1": 0.1462378578370346,
+      "interact_feature_1_feature_2": 0.027700649384507562,
+      "poly_2_feature_1 feature_2": 0.01791167167799073,
+      "poly_2_feature_2 feature_3": 0.01585620903075129,
+      "interact_feature_1_feature_3": 0.014858802685303195,
+      "feature_3": 0.014314978981216428,
+      "feature_5": 0.012230693374972266,
+      "poly_2_feature_1^2": 0.012086476539707975,
+      "interact_feature_2_feature_3": 0.009683273075219455,
+      "poly_2_feature_5^2": 0.009641365579954991,
+      "poly_2_feature_1 feature_4": 0.008697836486695584,
+      "interact_feature_2_feature_4": 0.008265804536355944,
+      "interact_feature_1_feature_4": 0.008236276607281958,
+      "poly_2_feature_3 feature_4": 0.007834872642346388,
+      "interact_feature_3_feature_4": 0.0077542139193604665,
+      "interact_feature_2_feature_5": 0.007264077767896661,
+      "poly_2_feature_2 feature_5": 0.0071419048991372336,
+      "poly_2_feature_1 feature_5": 0.006805043092332225,
+      "poly_2_feature_2^2": 0.006598593953925432
+    },
+    "interpretation": {
+      "accuracy_interpretation": "Model correctly predicts 80.0% of test cases",
+      "precision_interpretation": "When model predicts positive, it's correct 80.0% of the time",
+      "recall_interpretation": "Model finds 80.0% of actual positive cases"
+    }
+  }
+}

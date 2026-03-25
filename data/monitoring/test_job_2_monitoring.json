@@ -1,0 +1,138 @@
+{
+  "job_id": "test_job_2",
+  "timestamp": "2026-03-25T23:13:33.187000",
+  "total_predictions": 200,
+  "accuracy": 0.0,
+  "precision": null,
+  "recall": null,
+  "alerts": [
+    {
+      "type": "LOW_ACCURACY",
+      "severity": "CRITICAL",
+      "message": "Accuracy dropped to 0.00%",
+      "threshold": 0.7,
+      "current_value": 0.0
+    },
+    {
+      "type": "ANOMALY_DETECTED",
+      "severity": "MEDIUM",
+      "message": "low_confidence_predictions: {'type': 'low_confidence_predictions', 'percentage': 100.0, 'severity': 'medium'}",
+      "anomaly_details": {
+        "type": "low_confidence_predictions",
+        "percentage": 100.0,
+        "severity": "medium"
+      }
+    },
+    {
+      "type": "ANOMALY_DETECTED",
+      "severity": "MEDIUM",
+      "message": "high_prediction_latency: {'type': 'high_prediction_latency', 'percentage': 100.0, 'severity': 'medium'}",
+      "anomaly_details": {
+        "type": "high_prediction_latency",
+        "percentage": 100.0,
+        "severity": "medium"
+      }
+    },
+    {
+      "type": "CLASS_IMBALANCE_SHIFT",
+      "severity": "WARNING",
+      "message": "Significant shift in class distribution (diff: 200.00%)",
+      "distribution_diff": 2.0
+    }
+  ],
+  "alert_count": 4,
+  "alert_level": "CRITICAL",
+  "recommendation": "CRITICAL: Immediate action required. Review model predictions and consider retraining.",
+  "monitoring_results": {
+    "total_predictions": 200,
+    "timestamp_range": {
+      "start": "2026-03-25T23:10:14.040991",
+      "end": "2026-03-25T23:13:33.040873"
+    },
+    "accuracy": 0.0,
+    "per_class_metrics": {
+      "1.0": {
+        "accuracy": 0.0,
+        "samples": 200
+      }
+    },
+    "prediction_distribution": {
+      "0.0": {
+        "count": 200,
+        "percentage": 100.0
+      }
+    },
+    "sliding_window_metrics": {
+      "windows": [
+        {
+          "window_index": 0,
+          "start_time": "2026-03-25T23:13:33.040873",
+          "end_time": "2026-03-25T23:12:44.040906",
+          "sample_count": 50,
+          "accuracy": 0.0
+        },
+        {
+          "window_index": 1,
+          "start_time": "2026-03-25T23:13:08.040892",
+          "end_time": "2026-03-25T23:12:19.040920",
+          "sample_count": 50,
+          "accuracy": 0.0
+        },
+        {
+          "window_index": 2,
+          "start_time": "2026-03-25T23:12:43.040906",
+          "end_time": "2026-03-25T23:11:54.040934",
+          "sample_count": 50,
+          "accuracy": 0.0
+        },
+        {
+          "window_index": 3,
+          "start_time": "2026-03-25T23:12:18.040920",
+          "end_time": "2026-03-25T23:11:29.040949",
+          "sample_count": 50,
+          "accuracy": 0.0
+        },
+        {
+          "window_index": 4,
+          "start_time": "2026-03-25T23:11:53.040935",
+          "end_time": "2026-03-25T23:11:04.040963",
+          "sample_count": 50,
+          "accuracy": 0.0
+        },
+        {
+          "window_index": 5,
+          "start_time": "2026-03-25T23:11:28.040949",
+          "end_time": "2026-03-25T23:10:39.040977",
+          "sample_count": 50,
+          "accuracy": 0.0
+        },
+        {
+          "window_index": 6,
+          "start_time": "2026-03-25T23:11:03.040964",
+          "end_time": "2026-03-25T23:10:14.040991",
+          "sample_count": 50,
+          "accuracy": 0.0
+        },
+        {
+          "window_index": 7,
+          "start_time": "2026-03-25T23:10:38.040978",
+          "end_time": "2026-03-25T23:10:14.040991",
+          "sample_count": 25,
+          "accuracy": 0.0
+        }
+      ]
+    },
+    "anomalies": [
+      {
+        "type": "low_confidence_predictions",
+        "percentage": 100.0,
+        "severity": "medium"
+      },
+      {
+        "type": "high_prediction_latency",
+        "percentage": 100.0,
+        "severity": "medium"
+      }
+    ]
+  }
+}

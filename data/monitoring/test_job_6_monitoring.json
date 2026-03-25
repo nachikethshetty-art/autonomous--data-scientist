@@ -1,0 +1,127 @@
+{
+  "job_id": "test_job_6",
+  "timestamp": "2026-03-25T23:13:33.724894",
+  "total_predictions": 200,
+  "accuracy": 0.515,
+  "precision": 0.52,
+  "recall": 0.5148514851485149,
+  "alerts": [
+    {
+      "type": "LOW_ACCURACY",
+      "severity": "WARNING",
+      "message": "Accuracy dropped to 51.50%",
+      "threshold": 0.7,
+      "current_value": 0.515
+    },
+    {
+      "type": "ANOMALY_DETECTED",
+      "severity": "MEDIUM",
+      "message": "high_prediction_latency: {'type': 'high_prediction_latency', 'percentage': 100.0, 'severity': 'medium'}",
+      "anomaly_details": {
+        "type": "high_prediction_latency",
+        "percentage": 100.0,
+        "severity": "medium"
+      }
+    }
+  ],
+  "alert_count": 2,
+  "alert_level": "WARNING",
+  "recommendation": "WARNING: Monitor closely. Check for data drift and model performance degradation.",
+  "monitoring_results": {
+    "total_predictions": 200,
+    "timestamp_range": {
+      "start": "2026-03-25T23:10:14.606544",
+      "end": "2026-03-25T23:13:33.606406"
+    },
+    "accuracy": 0.515,
+    "per_class_metrics": {
+      "0": {
+        "accuracy": 0.5151515151515151,
+        "samples": 99
+      },
+      "1": {
+        "accuracy": 0.5148514851485149,
+        "samples": 101
+      }
+    },
+    "precision": 0.52,
+    "recall": 0.5148514851485149,
+    "prediction_distribution": {
+      "0": {
+        "count": 100,
+        "percentage": 50.0
+      },
+      "1": {
+        "count": 100,
+        "percentage": 50.0
+      }
+    },
+    "sliding_window_metrics": {
+      "windows": [
+        {
+          "window_index": 0,
+          "start_time": "2026-03-25T23:13:33.606406",
+          "end_time": "2026-03-25T23:12:44.606438",
+          "sample_count": 50,
+          "accuracy": 0.54
+        },
+        {
+          "window_index": 1,
+          "start_time": "2026-03-25T23:13:08.606425",
+          "end_time": "2026-03-25T23:12:19.606452",
+          "sample_count": 50,
+          "accuracy": 0.46
+        },
+        {
+          "window_index": 2,
+          "start_time": "2026-03-25T23:12:43.606439",
+          "end_time": "2026-03-25T23:11:54.606467",
+          "sample_count": 50,
+          "accuracy": 0.48
+        },
+        {
+          "window_index": 3,
+          "start_time": "2026-03-25T23:12:18.606453",
+          "end_time": "2026-03-25T23:11:29.606481",
+          "sample_count": 50,
+          "accuracy": 0.54
+        },
+        {
+          "window_index": 4,
+          "start_time": "2026-03-25T23:11:53.606467",
+          "end_time": "2026-03-25T23:11:04.606495",
+          "sample_count": 50,
+          "accuracy": 0.52
+        },
+        {
+          "window_index": 5,
+          "start_time": "2026-03-25T23:11:28.606482",
+          "end_time": "2026-03-25T23:10:39.606522",
+          "sample_count": 50,
+          "accuracy": 0.44
+        },
+        {
+          "window_index": 6,
+          "start_time": "2026-03-25T23:11:03.606496",
+          "end_time": "2026-03-25T23:10:14.606544",
+          "sample_count": 50,
+          "accuracy": 0.52
+        },
+        {
+          "window_index": 7,
+          "start_time": "2026-03-25T23:10:38.606523",
+          "end_time": "2026-03-25T23:10:14.606544",
+          "sample_count": 25,
+          "accuracy": 0.6
+        }
+      ]
+    },
+    "anomalies": [
+      {
+        "type": "high_prediction_latency",
+        "percentage": 100.0,
+        "severity": "medium"
+      }
+    ]
+  }
+}

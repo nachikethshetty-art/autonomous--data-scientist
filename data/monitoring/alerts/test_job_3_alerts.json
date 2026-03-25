@@ -1,0 +1,19 @@
+[
+  {
+    "type": "LOW_ACCURACY",
+    "severity": "WARNING",
+    "message": "Accuracy dropped to 51.50%",
+    "threshold": 0.7,
+    "current_value": 0.515
+  },
+  {
+    "type": "ANOMALY_DETECTED",
+    "severity": "MEDIUM",
+    "message": "high_prediction_latency: {'type': 'high_prediction_latency', 'percentage': 100.0, 'severity': 'medium'}",
+    "anomaly_details": {
+      "type": "high_prediction_latency",
+      "percentage": 100.0,
+      "severity": "medium"
+    }
+  }
+]
