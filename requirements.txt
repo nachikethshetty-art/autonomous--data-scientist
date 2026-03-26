@@ -1,6 +1,6 @@
-# Absolute minimal - no build tools needed
+# Absolute minimal - all must have pre-built wheels for Python 3.14
 fastapi==0.95.2
 uvicorn==0.21.0
 requests==2.31.0
-numpy==1.24.3
+numpy==2.1.0
 python-dotenv==1.0.0
