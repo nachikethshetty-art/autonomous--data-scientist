@@ -15,6 +15,24 @@ import numpy as np
 from io import StringIO
 
 
+def _convert_to_python_types(obj: Any) -> Any:
+    """Recursively convert numpy types to native Python types."""
+    if isinstance(obj, np.bool_):
+        return bool(obj)
+    elif isinstance(obj, np.integer):
+        return int(obj)
+    elif isinstance(obj, np.floating):
+        return float(obj)
+    elif isinstance(obj, np.ndarray):
+        return obj.tolist()
+    elif isinstance(obj, dict):
+        return {k: _convert_to_python_types(v) for k, v in obj.items()}
+    elif isinstance(obj, (list, tuple)):
+        return [_convert_to_python_types(item) for item in obj]
+    else:
+        return obj
+
+
 class DataValidator:
     """Validates and ingests CSV data with schema detection."""
 
@@ -111,17 +129,20 @@ class DataValidator:
         # Run validation checks
         validation_results = self._validate(job_id, df, schema)
 
-        return {
+        result = {
             "success": True,
             "job_id": job_id,
             "filename": filename,
-            "rows": df.shape[0],
-            "cols": df.shape[1],
+            "rows": int(df.shape[0]),
+            "cols": int(df.shape[1]),
             "columns": list(df.columns),
             "schema": schema,
             "metadata": metadata,
             "validation_results": validation_results,
         }
+        
+        # Convert all numpy types to Python-native types
+        return _convert_to_python_types(result)
 
     def _detect_schema(self, df: pd.DataFrame) -> Dict[str, Any]:
         """
@@ -172,9 +193,9 @@ class DataValidator:
     def _extract_metadata(self, df: pd.DataFrame, schema: Dict[str, Any]) -> Dict[str, Any]:
         """Extract summary statistics."""
         metadata = {
-            "total_rows": len(df),
-            "total_columns": len(df.columns),
-            "memory_usage_mb": round(df.memory_usage(deep=True).sum() / 1024 / 1024, 2),
+            "total_rows": int(len(df)),
+            "total_columns": int(len(df.columns)),
+            "memory_usage_mb": float(round(df.memory_usage(deep=True).sum() / 1024 / 1024, 2)),
             "duplicate_rows": int(df.duplicated().sum()),
             "numeric_columns": [],
             "categorical_columns": [],
@@ -194,7 +215,7 @@ class DataValidator:
                 metadata["datetime_columns"].append(col)
 
             if null_pct > 50:
-                metadata["sparse_columns"].append((col, null_pct))
+                metadata["sparse_columns"].append((col, float(null_pct)))
 
         return metadata
 
@@ -205,7 +226,7 @@ class DataValidator:
         # Check 1: Not empty
         check = {
             "name": "Non-empty dataset",
-            "passed": len(df) > 0,
+            "passed": bool(len(df) > 0),
             "message": f"Dataset has {len(df)} rows",
         }
         results.append(check)
@@ -214,7 +235,7 @@ class DataValidator:
         # Check 2: No completely empty columns
         check = {
             "name": "No completely empty columns",
-            "passed": not any(df[col].isnull().all() for col in df.columns),
+            "passed": bool(not any(df[col].isnull().all() for col in df.columns)),
             "message": f"All {len(df.columns)} columns have at least one value",
         }
         results.append(check)
@@ -223,17 +244,17 @@ class DataValidator:
         # Check 3: Reasonable number of rows/cols
         check = {
             "name": "Reasonable dimensions",
-            "passed": 10 <= len(df) <= 1000000 and 2 <= len(df.columns) <= 1000,
+            "passed": bool(10 <= len(df) <= 1000000 and 2 <= len(df.columns) <= 1000),
             "message": f"Shape {len(df)} x {len(df.columns)} is valid",
         }
         results.append(check)
         self._store_validation(job_id, check)
 
         # Check 4: Check for duplicates
-        dup_count = df.duplicated().sum()
+        dup_count = int(df.duplicated().sum())
         check = {
             "name": "Duplicate rows",
-            "passed": dup_count / len(df) < 0.5,  # Less than 50% duplicates
+            "passed": bool(dup_count / len(df) < 0.5),  # Less than 50% duplicates
             "message": f"{dup_count} duplicate rows ({round(dup_count/len(df)*100, 1)}%)",
         }
         results.append(check)
@@ -243,13 +264,22 @@ class DataValidator:
         has_bad_names = any(col.strip() != col or col == "" for col in df.columns)
         check = {
             "name": "Valid column names",
-            "passed": not has_bad_names,
+            "passed": bool(not has_bad_names),
             "message": "All columns have valid names",
         }
         results.append(check)
         self._store_validation(job_id, check)
 
-        return results
+        # Convert all results to JSON-serializable format
+        clean_results = []
+        for r in results:
+            clean_results.append({
+                "name": str(r["name"]),
+                "passed": bool(r["passed"]),
+                "message": str(r["message"])
+            })
+
+        return clean_results
 
     def _store_validation(self, job_id: str, check: Dict[str, Any]):
         """Store validation result in database."""

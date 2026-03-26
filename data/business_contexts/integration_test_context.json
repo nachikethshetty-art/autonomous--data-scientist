@@ -1,7 +1,7 @@
 {
   "job_id": "integration_test",
-  "context_id": "1b55404f-89e0-4091-b207-9e6836f184b7",
-  "created_at": "2026-03-25T23:18:36.781088",
+  "context_id": "46afcd33-0731-4788-a267-f61b6e4bbb1d",
+  "created_at": "2026-03-25T23:29:30.170911",
   "prediction_goal": "Classify customers",
   "domain": "Retail",
   "target_audience": "Marketing team",

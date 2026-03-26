@@ -1,6 +1,6 @@
 {
   "job_id": "integration_2",
-  "timestamp": "2026-03-25T23:19:21.195323",
+  "timestamp": "2026-03-25T23:30:14.164479",
   "total_predictions": 50,
   "accuracy": 0.56,
   "precision": 0.47619047619047616,
@@ -30,8 +30,8 @@
   "monitoring_results": {
     "total_predictions": 50,
     "timestamp_range": {
-      "start": "2026-03-25T23:18:32.087209",
-      "end": "2026-03-25T23:19:21.087176"
+      "start": "2026-03-25T23:29:25.057415",
+      "end": "2026-03-25T23:30:14.057381"
     },
     "accuracy": 0.56,
     "per_class_metrics": {
@@ -60,8 +60,8 @@
       "windows": [
         {
           "window_index": 0,
-          "start_time": "2026-03-25T23:19:21.087176",
-          "end_time": "2026-03-25T23:18:32.087209",
+          "start_time": "2026-03-25T23:30:14.057381",
+          "end_time": "2026-03-25T23:29:25.057415",
           "sample_count": 50,
           "accuracy": 0.56
         }

@@ -10,6 +10,7 @@ import json
 import pandas as pd
 from pathlib import Path
 import sys
+import os
 from datetime import datetime
 
 # Add src to path
@@ -23,8 +24,8 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-# API base URL
-API_URL = "http://localhost:8000"
+# API base URL - Use environment variable for flexibility
+API_URL = os.getenv("API_URL", "http://localhost:8000")
 
 # Custom CSS
 st.markdown(
