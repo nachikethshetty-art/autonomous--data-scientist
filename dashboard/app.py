@@ -167,6 +167,8 @@ if page == "🔼 Upload Data":
                         # Store in session
                         st.session_state.job_id = result["job_id"]
                         st.session_state.upload_result = result
+                        # Store the dataframe in session for problem detection
+                        st.session_state.dataframe = pd.read_csv(pd.io.common.StringIO(file_content))
 
                         st.markdown(
                             '<div class="success-box">✅ <b>Upload Successful!</b></div>',
@@ -793,7 +795,7 @@ elif page == "📄 Report":
             
             **Generated**: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
             
-            **Sections**: {sum(report_sections['Status'].count('✅'))} sections ready
+            **Sections**: {len(report_sections['Status'])} sections ready
             
             This comprehensive report includes data profiling, problem detection, model training results, 
             performance metrics, and actionable recommendations for improving your ML pipeline.
