@@ -1,10 +1,6 @@
-# Minimal Backend Requirements for Render Deployment
-# Using only pre-built wheels - NO compilation needed
-
+# Ultra-minimal backend for Render - NO pandas compilation
 fastapi==0.104.1
 uvicorn==0.24.0
-pandas==1.5.3
-numpy==1.24.3
 requests==2.31.0
 pydantic==2.4.0
 python-dotenv==1.0.0
