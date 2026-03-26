@@ -1,5 +1,8 @@
 # Ultra-minimal - Python 3.11 only
-# NO pydantic-core issues, all have pre-built wheels
+# Build tools MUST come first
+setuptools==69.0.3
+wheel==0.42.0
+# Core dependencies - all have pre-built wheels
 fastapi==0.95.2
 uvicorn==0.21.0
 requests==2.31.0
