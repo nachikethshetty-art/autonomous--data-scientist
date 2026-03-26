@@ -1,14 +1,12 @@
 # Core Framework
 fastapi==0.115.4
 uvicorn[standard]==0.30.0
-streamlit==1.40.0
 pandas>=2.0.0
 numpy>=1.26.0
 
 # ML & AutoML
 scikit-learn>=1.4.0
 xgboost>=2.0.0
-optuna>=3.14.0
 scipy>=1.11.0
 
 # Agents & LLM
@@ -20,28 +18,12 @@ google-generativeai>=0.3.0
 
 # Explainability & Drift
 shap>=0.43.0
-evidently>=0.4.14
 matplotlib>=3.8.0
 seaborn>=0.13.0
-
-# Vector DB & Embeddings
-chromadb>=0.4.0
-sentence-transformers>=2.2.0
-
-# Orchestration
-apache-airflow>=2.8.0
-
-# Experiment Tracking & Versioning
-mlflow>=2.9.0
-dvc>=3.33.0
 
 # Reporting
 reportlab>=4.0.0
 jinja2>=3.1.0
-
-# Testing
-pytest>=7.4.0
-pytest-asyncio>=0.21.0
 
 # Utilities
 python-dotenv>=1.0.0
