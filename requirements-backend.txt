@@ -1,0 +1,10 @@
+# Backend Requirements for Render Deployment
+fastapi==0.95.2
+uvicorn==0.21.0
+requests==2.31.0
+numpy==2.1.0
+python-dotenv==1.0.0
+python-multipart==0.0.6
+starlette==0.26.0
+click==8.1.0
+h11==0.14.0
