@@ -1,6 +1,6 @@
-# Ultra-minimal backend for Render - Python 3.12 with pre-built wheels
-fastapi==0.104.1
-uvicorn==0.24.0
+# Ultra-minimal - Python 3.11 only
+# NO pydantic-core issues, all have pre-built wheels
+fastapi==0.95.2
+uvicorn==0.21.0
 requests==2.31.0
-pydantic==2.0.3
 python-dotenv==1.0.0

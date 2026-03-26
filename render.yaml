@@ -2,6 +2,6 @@ services:
   - type: web
     name: autonomous-ai-api
     env: python
-    pythonVersion: 3.12
-    buildCommand: pip install --upgrade pip wheel setuptools && pip install -r requirements.txt --prefer-binary
+    pythonVersion: 3.11
+    buildCommand: pip install -r requirements.txt
     startCommand: uvicorn api.main:app --host 0.0.0.0 --port $PORT
