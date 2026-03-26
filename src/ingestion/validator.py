@@ -10,9 +10,22 @@ import uuid
 from datetime import datetime
 from typing import Optional, Dict, Any, List
 from pathlib import Path
-import pandas as pd
 import numpy as np
 from io import StringIO
+
+# Lazy import pandas - only load when actually needed
+pd = None
+
+def _get_pandas():
+    """Lazy import pandas to avoid import errors on startup."""
+    global pd
+    if pd is None:
+        try:
+            import pandas
+            pd = pandas
+        except ImportError:
+            raise RuntimeError("pandas is required for DataValidator")
+    return pd
 
 
 def _convert_to_python_types(obj: Any) -> Any:
@@ -88,6 +101,9 @@ class DataValidator:
         Returns:
             Dict with job_id, schema, validation results
         """
+        # Lazy import pandas
+        pd = _get_pandas()
+        
         # Parse CSV
         try:
             df = pd.read_csv(StringIO(file_content))
@@ -144,7 +160,7 @@ class DataValidator:
         # Convert all numpy types to Python-native types
         return _convert_to_python_types(result)
 
-    def _detect_schema(self, df: pd.DataFrame) -> Dict[str, Any]:
+    def _detect_schema(self, df: Any) -> Dict[str, Any]:
         """
         Detect data types and schema.
 
@@ -174,8 +190,9 @@ class DataValidator:
 
         return schema
 
-    def _infer_column_type(self, series: pd.Series) -> str:
+    def _infer_column_type(self, series: Any) -> str:
         """Infer actual type from object column."""
+        pd = _get_pandas()
         try:
             pd.to_numeric(series, errors="raise")
             return "numeric"
@@ -190,7 +207,7 @@ class DataValidator:
 
         return "categorical"
 
-    def _extract_metadata(self, df: pd.DataFrame, schema: Dict[str, Any]) -> Dict[str, Any]:
+    def _extract_metadata(self, df: Any, schema: Dict[str, Any]) -> Dict[str, Any]:
         """Extract summary statistics."""
         metadata = {
             "total_rows": int(len(df)),
@@ -219,7 +236,7 @@ class DataValidator:
 
         return metadata
 
-    def _validate(self, job_id: str, df: pd.DataFrame, schema: Dict[str, Any]) -> List[Dict[str, Any]]:
+    def _validate(self, job_id: str, df: Any, schema: Dict[str, Any]) -> List[Dict[str, Any]]:
         """Run validation checks."""
         results = []
 
@@ -352,8 +369,9 @@ class DataValidator:
                 for row in rows
             ]
 
-    def load_dataframe(self, job_id: str) -> Optional[pd.DataFrame]:
+    def load_dataframe(self, job_id: str) -> Optional[Any]:
         """Load processed dataframe for a job."""
+        pd = _get_pandas()
         with sqlite3.connect(self.DB_PATH) as conn:
             row = conn.execute(
                 "SELECT file_path FROM jobs WHERE job_id = ?", (job_id,)
