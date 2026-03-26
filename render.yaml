@@ -3,5 +3,5 @@ services:
     name: autonomous-ai-api
     env: python
     pythonVersion: 3.11
-    buildCommand: pip install --no-deps --no-build-isolation -r requirements.txt && pip install starlette click h11
+    buildCommand: pip install --no-deps fastapi uvicorn requests numpy python-dotenv && pip install python-multipart==0.0.6 starlette click h11
     startCommand: uvicorn api.main:app --host 0.0.0.0 --port $PORT
