@@ -11,9 +11,17 @@ port = 8501
 runOnSave = true
 maxUploadSize = 200
 enableXsrfProtection = true
+enableCORS = false
 
 [logger]
 level = "info"
 
 [client]
 showErrorDetails = true
+toolbarMode = "minimal"
+
+[cache]
+maxEntries = 1000
+
+[deprecation]
+showPyplotGlobalUse = false
