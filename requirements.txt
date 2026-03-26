@@ -1,7 +1,7 @@
-# Ultra-minimal backend for Render - ONLY pure Python, NO Rust deps
-# Using compatible versions: FastAPI 0.95.x with pydantic 1.9.2
-fastapi==0.95.2
-uvicorn==0.21.0
-requests==2.31.0
-pydantic==1.9.2
+# Ultra-minimal backend for Render - Python 3.14 compatible
+# Latest versions with pre-built wheels for Python 3.14
+fastapi==0.115.0
+uvicorn==0.30.0
+requests==2.32.0
+pydantic==2.7.0
 python-dotenv==1.0.0
