@@ -2,6 +2,9 @@ services:
   - type: web
     name: autonomous-ai-api
     env: python
-    pythonVersion: 3.11.10
-    buildCommand: bash -c 'python3 --version && pip install -r requirements.txt'
+    pythonVersion: 3.11
+    envVars:
+      - key: PYENV_VERSION
+        value: 3.11.10
+    buildCommand: which python && python --version && pip install --upgrade pip && pip install -r requirements.txt
     startCommand: uvicorn api.main:app --host 0.0.0.0 --port $PORT
