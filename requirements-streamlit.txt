@@ -1,17 +1,15 @@
-# Streamlit Frontend Requirements
-# Deploy to Streamlit Cloud
+# Streamlit Frontend Requirements - Optimized for fast deployment
+# Removed heavy packages that require compilation:
+# - SHAP (use backend API instead)
+# - XGBoost (backend handles models)
+# - LangGraph/LangChain (only needed if running LLM locally)
 
 streamlit==1.40.0
 pandas==2.2.0
 numpy==2.1.0
 plotly==5.24.1
-scikit-learn==1.5.2
-xgboost==2.1.1
-shap==0.44.0
+scikit-learn==1.5.1
 matplotlib==3.9.2
 seaborn==0.13.2
 requests==2.31.0
 python-dotenv==1.0.0
-langgraph==0.0.52
-langchain==0.1.20
-langchain-community==0.0.38
