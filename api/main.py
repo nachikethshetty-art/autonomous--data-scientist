@@ -13,8 +13,9 @@ from dotenv import load_dotenv
 import json
 import numpy as np
 
-# Import modules
-from src.ingestion.validator import DataValidator
+# Lazy import - DataValidator will be imported only when needed
+# This avoids loading pandas at startup
+DataValidator = None
 
 
 class NumpyEncoder(json.JSONEncoder):
@@ -36,13 +37,28 @@ load_dotenv()
 # Global state
 validator = None
 
+def _get_validator():
+    """Lazy load DataValidator to avoid importing pandas at startup."""
+    global DataValidator
+    if DataValidator is None:
+        from src.ingestion.validator import DataValidator as DV
+        DataValidator = DV
+    return DataValidator()
+
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """Startup/shutdown lifecycle."""
     global validator
-    validator = DataValidator()
-    print("✅ API started - DataValidator initialized")
+    try:
+        # Try to initialize validator (may fail if pandas not available)
+        validator_class = _get_validator.__code__.co_consts
+        ValidatorClass = __import__('src.ingestion.validator', fromlist=['DataValidator']).DataValidator
+        validator = ValidatorClass()
+        print("✅ API started - DataValidator initialized")
+    except ImportError:
+        print("⚠️  DataValidator not available (pandas not installed)")
+        validator = None
     yield
     print("🛑 API shutdown")
 
