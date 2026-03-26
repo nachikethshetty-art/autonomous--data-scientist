@@ -1,5 +1,8 @@
-# Ultra-minimal backend for Render - ONLY pure Python packages
+# Ultra-minimal backend for Render - ONLY pure Python, NO Rust deps
+# pydantic-core (Rust) causes maturin failures on Render
+# Using ANCIENT pydantic v1 which is pure Python
 fastapi==0.100.0
 uvicorn==0.23.0
 requests==2.31.0
+pydantic==1.9.2
 python-dotenv==1.0.0
