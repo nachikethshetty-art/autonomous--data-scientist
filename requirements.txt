@@ -1,6 +1,5 @@
-# Ultra-minimal backend for Render - Pre-built wheels only
-fastapi==0.104.1
-uvicorn==0.24.0
+# Ultra-minimal backend for Render - ONLY pure Python packages
+fastapi==0.100.0
+uvicorn==0.23.0
 requests==2.31.0
-pydantic==2.5.3
 python-dotenv==1.0.0
