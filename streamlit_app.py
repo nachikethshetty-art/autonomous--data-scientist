@@ -12,23 +12,6 @@ from datetime import datetime, timedelta
 import json
 from pathlib import Path
 
-# Lazy load heavy packages only when needed
-@st.cache_resource
-def load_shap():
-    try:
-        import shap
-        return shap
-    except ImportError:
-        return None
-
-@st.cache_resource
-def load_langgraph():
-    try:
-        import langgraph
-        return langgraph
-    except ImportError:
-        return None
-
 # Page configuration
 st.set_page_config(
     page_title="AI Data Scientist",
